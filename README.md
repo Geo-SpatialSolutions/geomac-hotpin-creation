@@ -1,0 +1,1 @@
+Copies pins from geoMAC into our hotpin layer
