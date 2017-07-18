@@ -178,15 +178,16 @@ def notify_error(message):
     global slack_token
     global slack_channel
 
-    sc = SlackClient("xoxp-7169885124-149709077268-214069887922-472cb181c7f042a2054acc59130faf85")
+    sc = SlackClient(slack_token)
     try:
         sc.api_call(
             "chat.postMessage",
-            channel="im-id-logs",
+            channel=slack_channel,
             text=message
         )
     except Exception as e:
         print("error" + str(e))
     quit()
+
 
 import_geomac_pins()
